@@ -1,0 +1,27 @@
+{
+    "manufacturer": "xcd0",
+    "keyboard_name": "b40",
+    "maintainer": "xcd0",
+    "bootloader": "caterina",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": true,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+         "cols": ["C6", "D7", "E6", "B4", "B5", "F7", "B1", "B3", "B2", "B6"],
+         "rows": ["C6", "D7", "E6", "B4", "B5", "F7", "B1", "B3", "B2", "B6"]
+    },
+    "processor": "atmega32u4",
+    "url": "",
+    "debounce": 10,
+    "usb": {
+        "device_version": "1.0.0",
+        "vid": "0xF113",
+        "pid": "0x0000"
+    }
+}
