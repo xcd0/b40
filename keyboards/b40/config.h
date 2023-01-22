@@ -24,8 +24,8 @@
 #define BOOTMAGIC_LITE_COLUMN 1
 
 // タップダンス
-#define TAPPING_TERM 200
-//#define TAPPING_TERM 500
+//#define TAPPING_TERM 200
+#define TAPPING_TERM 500
 #define PERMISSIVE_HOLD
 #define FORCE_NKRO
 
