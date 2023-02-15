@@ -1,0 +1,19 @@
+{
+    "keyboard_name": "lm36", "manufacturer": "xcd0", "maintainer": "xcd0", "url": "https://github.com/xcd0/qmk_lm36/",
+    "bootloader": "rp2040", "processor": "RP2040",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "command": false, "console": false,
+        "bootmagic": true, "extrakey": true, "mousekey": true, "nkro": true
+    },
+    "matrix_pins": {
+        "cols": ["GP5", "GP6", "GP7", "GP8", "GP9", "GP28", "GP27", "GP26", "GP22", "GP21"],
+        "rows": ["GP5", "GP6", "GP7", "GP8", "GP9", "GP28", "GP27", "GP26", "GP22", "GP21"]
+    },
+    "debounce": 10,
+    "usb": {
+        "vid": "0xF111",
+        "pid": "0x0001",
+        "device_version": "1.0.0"
+    }
+}

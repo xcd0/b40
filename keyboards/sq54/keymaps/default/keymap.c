@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 #include "keymap_japanese.h"
-#include "b50.h"
+#include "sq54.h"
 
 // tap dance {{{1
 enum custom_keycodes {
@@ -265,8 +265,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define L2_B   LT(2,JP_B)
 #define L3_V   LT(3,JP_V)
 #define S_ESC  SFT_T(KC_ESC) // esc -> shift
-#define A_MHEN ALT_T(JP_MHEN)
-#define G_HENK GUI_T(JP_HENK)
 #define L2_HOME LT(2,KC_HOME)
 #define L3_END  LT(3,KC_END)
 // MT(MOD_LALT,JP_MHEN) MT(MOD_LSFT,JP_BSPC) MT(MOD_LGUI,JP_HENK)
@@ -274,10 +272,12 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define S_INS S(KC_INS)
 #define CG_LEFT C(G(KC_LEFT))
 #define CG_RGHT C(G(KC_RGHT))
-#define GUI_TAB G(KC_TAB)
 
 #define A_HOME ALT_T(KC_HOME)
+#define A_MHEN ALT_T(JP_MHEN)
 #define G_END  GUI_T(KC_END)
+#define G_TAB  GUI_T(KC_TAB)
+#define G_HENK GUI_T(JP_HENK)
 #define C_TAB  CTL_T(KC_TAB)
 #define C_ESC  CTL_T(KC_ESC)
 #define S_SPC  SFT_T(KC_SPC)
@@ -306,11 +306,19 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
-        JP_Q,    JP_W,    JP_E,    JP_R,    JP_T,                      JP_Y,    JP_U,    JP_I,    JP_O,    JP_P,
-        JP_A,    JP_S,    JP_D,    JP_F,    L1_G,                      JP_H,    JP_J,    JP_K,    JP_L,    JP_SCLN,
-        JP_Z,    JP_X,    L4_C,    L3_V,    L2_B,                      JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   L1_MHEN, L2_HENK, KC_BSPC, KC_ENT,  KC_DEL,  G_END
+        KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,    JP_MINS,
+        KC_TAB,  JP_Q,    JP_W,    JP_E,    JP_R,    JP_T,      JP_Y,    JP_U,    JP_I,    JP_O,    JP_P,    JP_AT,
+        KC_LCTL, JP_A,    JP_S,    JP_D,    JP_F,    L1_G,      JP_H,    JP_J,    JP_K,    JP_L,    JP_SCLN, JP_COLN,
+        KC_LSFT, JP_Z,    JP_X,    L4_C,    L3_V,    L2_B,      JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH, JP_UNDS,
+                          L1_MHEN, A_HOME,  KC_LSFT, S_SPC,     KC_BSPC, KC_ENT,  KC_DEL,  G_HENK
+    ),
+    [1] = LAYOUT(
+        KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,    JP_MINS,
+        KC_TAB,  JP_Q,    JP_W,    JP_E,    JP_R,    JP_T,      JP_Y,    JP_U,    JP_I,    JP_O,    JP_P,    JP_AT,
+        KC_LCTL, JP_A,    JP_S,    JP_D,    JP_F,    L1_G,      JP_H,    JP_J,    JP_K,    JP_L,    JP_SCLN, JP_COLN,
+        KC_LSFT, JP_Z,    JP_X,    L4_C,    L3_V,    L2_B,      JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH, JP_UNDS,
+                          L1_MHEN, A_HOME,  KC_LSFT, S_SPC,     KC_BSPC, KC_ENT,  KC_DEL,  G_HENK
+    ) /*
     ),
     [1] = LAYOUT(
         JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
@@ -362,6 +370,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                  A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, DF(0), KC_BSPC, KC_ENT,  KC_DEL,  G_END
     )
+	*/
 };
 
 

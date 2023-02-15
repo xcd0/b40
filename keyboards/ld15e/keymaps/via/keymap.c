@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 #include "keymap_japanese.h"
-#include "b50.h"
+#include "ld15e.h"
 
 // tap dance {{{1
 enum custom_keycodes {
@@ -306,63 +306,46 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
-        JP_Q,    JP_W,    JP_E,    JP_R,    JP_T,                      JP_Y,    JP_U,    JP_I,    JP_O,    JP_P,
-        JP_A,    JP_S,    JP_D,    JP_F,    L1_G,                      JP_H,    JP_J,    JP_K,    JP_L,    JP_SCLN,
-        JP_Z,    JP_X,    L4_C,    L3_V,    L2_B,                      JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   L1_MHEN, L2_HENK, KC_BSPC, KC_ENT,  KC_DEL,  G_END
+        XXXXXXX, XXXXXXX, G(KC_Z), SCMD(KC_Z),
+        XXXXXXX, KC_E,    KC_B,    KC_LALT,   KC_SPC,
+        KC_LGUI, KC_X,    KC_C,    KC_L,
+                 C_ESC,   S_SPC,   MO(1)
     ),
     [1] = LAYOUT(
-        JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
-        JP_EXLM, JP_DQUO, JP_HASH, JP_DLR,  JP_PERC,                   JP_AMPR, JP_QUOT, JP_LPRN, JP_RPRN, JP_AT,
-        JP_CIRC, JP_PLUS, JP_MINS, JP_ASTR, XXXXXXX,                   XXXXXXX, JP_DQUO, JP_LBRC, JP_RBRC, JP_COLN,
-        JP_TILD, JP_UNDS, JP_EQL,  JP_PIPE, XXXXXXX,                   XXXXXXX, JP_GRV,  JP_LCBR, JP_RCBR, JP_BSLS,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, XXXXXXX, KC_BSPC, KC_ENT,  KC_DEL,  G_END
-    ),
-    [2] = LAYOUT(
-        JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
-        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,
-        KC_F11,  KC_F12,  C_INS,   S_INS,   XXXXXXX,                   KC_P0,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, XXXXXXX, KC_BSPC, KC_ENT,  KC_DEL,  G_END
-    ),
-    [3] = LAYOUT(
-        JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                      JP_6,    JP_7,    JP_8,    JP_9,    JP_0,
-        KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, XXXXXXX,                   CG_LEFT, GUI_TAB, XXXXXXX, CG_RGHT, XXXXXXX,
-        KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, KC_BTN3,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, XXXXXXX, KC_BSPC, KC_ENT,  KC_DEL,  G_END
-    ),
-    [4] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX, KC_WH_U,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_WH_D,
-        XXXXXXX, XXXXXXX, XXXXXXX, DF(5),   DF(7),                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, XXXXXXX, KC_BSPC, KC_ENT,  KC_DEL,  G_END
-    ),
-    [5] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LGUI,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        G(KC_X), G(KC_C), G(KC_V), G(KC_Z), SCMD(KC_Z),                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        C(KC_A), KC_S,    KC_E,    KC_B,    KC_LALT,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        G(KC_D), KC_X,    KC_C,    KC_V,    KC_L,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   MO(6),   DF(0),   KC_BSPC, KC_ENT,  KC_DEL,  G_END
-    ),
-    [6] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, G(KC_RBRC), KC_RBRC,                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, G(KC_LBRC), KC_LBRC,                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, DF(0),   KC_BSPC, KC_ENT,  KC_DEL,  G_END
+        G(KC_X), G(KC_C), G(KC_V),    XXXXXXX,
+        C(KC_A), KC_S,    G(KC_RBRC), KC_RBRC,   XXXXXXX,
+        G(KC_D), KC_V,    G(KC_LBRC), KC_LBRC,
+                 DF(2), XXXXXXX,    XXXXXXX
     ),
     // for chrome
-    [7] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, KC_F5,   RCS(KC_T), C(KC_PGUP), C(KC_PGDN),           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        C(KC_A), C(KC_S), C(KC_W), A(KC_LEFT), A(KC_RGHT),             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 A_HOME,  KC_TAB,  C_ESC,   S_SPC,   XXXXXXX, DF(0), KC_BSPC, KC_ENT,  KC_DEL,  G_END
+    [2] = LAYOUT(
+        KC_F5,   RCS(KC_T), C(KC_PGUP), C(KC_PGDN),
+        C(KC_A), C(KC_W),   A(KC_LEFT), A(KC_RGHT),   XXXXXXX,
+        C(KC_Z), C(KC_X),   C(KC_C),    C(KC_V),
+                 MO(3),     DF(0),      KC_ENT
+    ),
+    [3] = LAYOUT(
+        RESET,   XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                 XXXXXXX, XXXXXXX, XXXXXXX
     )
 };
 
-
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    //if (index == 0) { // First encoder
+        if (clockwise) {
+            tap_code(KC_WH_U);
+        } else {
+            tap_code(KC_WH_D);
+        }
+    /*} else if (index == 1) { // Second encoder
+        if (clockwise) {
+            tap_code(KC_DOWN);
+        } else {
+            tap_code(KC_UP);
+        }
+    }*/
+    return false;
+}
 

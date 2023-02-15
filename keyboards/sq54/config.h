@@ -19,6 +19,7 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
+#include "config_common.h"
 
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0
@@ -31,4 +32,11 @@
 
 //#define SERIAL_DEBUG
 
+#define SOFT_SERIAL_PIN B0
+
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+#define MASTER_LEFT
+//#define MASTER_RIGHT
+
+

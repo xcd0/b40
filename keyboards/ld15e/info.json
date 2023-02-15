@@ -1,0 +1,27 @@
+{
+    "manufacturer": "xcd0",
+    "keyboard_name": "ld15e",
+    "maintainer": "xcd0",
+    "bootloader": "caterina",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": true,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+        "cols": ["B5", "B4", "E6", "D7"],
+        "rows": ["B1", "B3", "B2", "B6"]
+    },
+    "processor": "atmega32u4",
+    "url": "",
+    "debounce": 10,
+    "usb": {
+        "device_version": "1.0.0",
+        "vid": "0xF115",
+        "pid": "0x0000"
+    }
+}

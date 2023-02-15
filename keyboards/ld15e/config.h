@@ -31,4 +31,9 @@
 
 //#define SERIAL_DEBUG
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+//#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+#define ENCODERS_PAD_A { D1 }
+#define ENCODERS_PAD_B { D1 }
+
+

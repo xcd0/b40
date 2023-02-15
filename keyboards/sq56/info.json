@@ -1,0 +1,27 @@
+{
+    "manufacturer": "xcd0",
+    "keyboard_name": "sq56e",
+    "maintainer": "xcd0",
+    "bootloader": "atmel-dfu",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": false,
+        "mousekey": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+        "cols": ["F6", "F7", "B1", "B3", "B2", "B6"],
+        "rows": ["B7", "D5", "C7", "F1", "F0"]
+    },
+    "processor": "atmega32u4",
+    "url": "",
+    "debounce": 10,
+    "usb": {
+        "device_version": "1.0.0",
+        "vid": "0xF116",
+        "pid": "0x0000"
+    }
+}
