@@ -32,3 +32,6 @@
 // via
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
+
+#define MOUSEKEY_MOVE_DELTA 32 // default : 8
+

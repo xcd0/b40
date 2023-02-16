@@ -286,6 +286,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define L3_COLN   LT(3, JP_COLN)
 #define L3_V   LT(3,JP_V)
 #define L3_END  LT(3,KC_END)
+#define L3_ENT  LT(3,KC_ENT)
 #define L4_C   LT(4,JP_C)
 #define L4_B   LT(4,JP_B)
 #define L4_DEL LT(4,KC_DEL)
@@ -312,12 +313,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                        JP_6,    JP_7,    JP_8,    JP_9,    JP_0,    JP_MINS,
         KC_TAB,  JP_Q,    JP_W,    JP_E,    JP_R,    JP_T,                        JP_Y,    JP_U,    JP_I,    JP_O,    JP_P,    JP_AT,
-        KC_LCTL, JP_A,    JP_S,    JP_D,    JP_F,    JP_G,    KC_LSFT,   KC_LSFT, JP_H,    JP_J,    JP_K,    JP_L,    L2_SCLN, L3_COLN,
-        KC_LSFT, JP_Z,    JP_X,    JP_C,    L3_V,    L2_B,    KC_SPC,    KC_SPC,  JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH, JP_BSLS,
-                          A_MHEN,  KC_LCTL, KC_LSFT, L1_SPC,                      KC_BSPC, KC_ENT,  L4_DEL,  G_HENK,
+        KC_LCTL, JP_A,    JP_S,    JP_D,    JP_F,    JP_G,    KC_LSFT,   S_INS,   JP_H,    JP_J,    JP_K,    JP_L,    JP_SCLN, JP_COLN,
+        KC_LSFT, JP_Z,    JP_X,    JP_C,    L3_V,    L2_B,    MO(1),    C_INS,   JP_N,    JP_M,    JP_COMM, JP_DOT,  JP_SLSH, JP_BSLS,
+                          A_MHEN,  KC_LCTL, L1_SPC,  KC_LSFT,                     KC_BSPC, L3_ENT,  L4_DEL,  G_HENK,
 
-                                            KC_WH_U,                                     KC_WH_U, 
-                                S(KC_WH_U), KC_WH_D, S(KC_WH_D),             S(KC_WH_U), KC_WH_D, S(KC_WH_D) 
+                                            KC_WH_U,                                     KC_WH_U,
+                                   KC_MS_L, KC_WH_D, KC_MS_R,             C(G(KC_LEFT)), KC_WH_D, C(G(KC_RGHT))
     ),
     [1] = LAYOUT(
         KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                        JP_6,    JP_7,    JP_8,    JP_9,    JP_0,    JP_MINS,
@@ -327,13 +328,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_MHEN, KC_LCTL, KC_LSFT, KC_SPC,                      KC_BSPC, KC_ENT,  KC_DEL,  KC_HENK,
 
                                             KC_WH_U,                                     KC_WH_U, 
-                                S(KC_WH_U), KC_WH_D, S(KC_WH_D),             S(KC_WH_U), KC_WH_D, S(KC_WH_D) 
+                                KC_WS_U, KC_WH_D, KC_WS_D,             S(KC_WH_U), KC_WH_D, S(KC_WH_D) 
     ),
     [2] = LAYOUT(
-        KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                        JP_6,    JP_7,    JP_8,    JP_9,    JP_0,    JP_MINS,
+        KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                        JP_6,    JP_7,    JP_8,    JP_9,   JP_0,    JP_MINS,
         KC_TAB,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS, XXXXXXX,
         KC_LCTL, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX,   XXXXXXX, KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS, XXXXXXX,
-        KC_LSFT, KC_F11,  KC_F12,  C_INS,   S_INS,   XXXXXXX, XXXXXXX,   XXXXXXX, KC_P0,   KC_P1,   KC_P2,   KC_P3,  KC_PENT, RESET,
+        KC_LSFT, KC_F11,  KC_F12,  C_INS,   S_INS,   XXXXXXX, XXXXXXX,   XXXXXXX, KC_P0,   KC_P1,   KC_P2,   KC_P3,  KC_PENT, XXXXXXX,
                           KC_MHEN, KC_LCTL, KC_LSFT, KC_SPC,                      KC_BSPC, KC_ENT,  KC_DEL,  KC_HENK,
 
                                             KC_WH_U,                                     KC_WH_U, 
@@ -386,7 +387,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 		//   2      false   ->  11 1       ENC3D
 		//   3      true    ->  11 2       ENC4U
 		//   3      false   ->  11 3       ENC4D
-		key.row = index < 2 ? 5 : 6;
+		key.row = index < 2 ? 5 : 11;
 		if( index == 0 || index == 2 ){ key.col = clockwise ? 0 : 1; }
 		else if( index == 1 || index == 3 ){ key.col = clockwise ? 2 : 3; }
 		else {
