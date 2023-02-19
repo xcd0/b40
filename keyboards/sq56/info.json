@@ -10,7 +10,12 @@
         "console": false,
         "extrakey": false,
         "mousekey": true,
-        "nkro": true
+        "nkro": true,
+        "lto": true,
+        "via": true,
+        "encoder": true,
+        "split_keyboard": true,
+        "tap_dance": true
     },
     "matrix_pins": {
         "cols": ["F6", "F7", "B1", "B3", "B2", "B6"],
