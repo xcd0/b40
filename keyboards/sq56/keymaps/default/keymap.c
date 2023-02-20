@@ -328,7 +328,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_MHEN, KC_LCTL, KC_LSFT, KC_SPC,                      KC_BSPC, KC_ENT,  KC_DEL,  KC_HENK,
 
                                             KC_WH_U,                                     KC_WH_U, 
-                                KC_WS_U, KC_WH_D, KC_WS_D,             S(KC_WH_U), KC_WH_D, S(KC_WH_D) 
+                                KC_MS_U, KC_WH_D, KC_MS_D,             S(KC_WH_U), KC_WH_D, S(KC_WH_D) 
     ),
     [2] = LAYOUT(
         KC_ESC,  JP_1,    JP_2,    JP_3,    JP_4,    JP_5,                        JP_6,    JP_7,    JP_8,    JP_9,   JP_0,    JP_MINS,
